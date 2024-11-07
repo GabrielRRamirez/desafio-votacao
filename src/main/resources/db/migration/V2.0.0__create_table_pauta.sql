@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS pauta (
+    id SERIAL NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    CONSTRAINT pk_pauta PRIMARY KEY (id));
