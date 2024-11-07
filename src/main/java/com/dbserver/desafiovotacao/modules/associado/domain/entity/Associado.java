@@ -4,6 +4,7 @@ import com.dbserver.desafiovotacao.modules.associado.domain.dto.CreateAssociadoD
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,6 +22,7 @@ public class Associado {
     private long id;
 
     @NotBlank(message = MSG_VALIDACAO_NOME)
+    @Pattern(regexp = "\\d{5,255}", message = MSG_VALIDACAO_NOME)
     private String nome;
 
     @NotBlank(message = MSG_VALIDACAO_CPF)

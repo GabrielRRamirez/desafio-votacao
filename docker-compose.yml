@@ -32,6 +32,7 @@ services:
       DB_PASS: ${DB_PASS}
       DB_HOST: ${DB_HOST}
       APPLICATION_PORT: ${APPLICATION_PORT}
+    restart: on-failure
 
 networks:
   api-desafio-votacao:
