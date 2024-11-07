@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: postgres:12-alpine
+    volumes:
+      - './db/:/var/lib/postgresql/data/'
+    networks:
+      - api-desafio-votacao
+    ports:
+      - '${DB_PORT}:5432'
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      POSTGRES_PASSWORD: ${DB_PASS}
+    container_name: 'postgres_desafio_votacao'
+
+  app:
+    build:
+      context: .
+    container_name: app_desafio_votacao
+    working_dir: /app
+    networks:
+      - api-desafio-votacao
+    depends_on:
+      - postgres
+    ports:
+      - "${APPLICATION_PORT}:${APPLICATION_PORT}"
+    environment:
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_HOST: ${DB_HOST}
+      APPLICATION_PORT: ${APPLICATION_PORT}
+
+networks:
+  api-desafio-votacao:
+    driver: bridge
