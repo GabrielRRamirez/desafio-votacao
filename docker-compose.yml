@@ -6,12 +6,13 @@ services:
     networks:
       - api-desafio-votacao
     ports:
-      - '${DB_PORT}:5432'
+      - '${DB_PORT}:${DB_PORT}'
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
       POSTGRES_HOST_AUTH_METHOD: 'trust'
       POSTGRES_PASSWORD: ${DB_PASS}
+      PGPORT: ${DB_PORT}
     container_name: 'postgres_desafio_votacao'
 
   app:
