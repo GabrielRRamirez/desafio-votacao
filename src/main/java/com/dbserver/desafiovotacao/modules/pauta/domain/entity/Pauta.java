@@ -19,7 +19,7 @@ public class Pauta {
     private long id;
 
     @NotBlank(message = MSG_DESCRICAO_VAZIA)
-    @Pattern(regexp = "\\d{10,255}", message = MSG_DESCRICAO_VAZIA)
+    @Pattern(regexp = ".{10,255}", message = MSG_DESCRICAO_VAZIA)
     private String descricao;
 
     public Pauta(CreatePautaDTO createPauta) {

@@ -27,6 +27,17 @@ public class FindPautaUseCaseImpl implements FindPautaUseCase {
     }
 
     @Override
+    public Pauta findEntityById(long id) {
+        Pauta pauta = pautaRepository.findById(id);
+
+        if (Objects.isNull(pauta)) {
+            throw new EntityNotFoundException();
+        }
+
+        return pauta;
+    }
+
+    @Override
     public Page<DetailPautaDTO> findAll(Pageable pageable) {
         return pautaRepository.findAll(pageable).map(DetailPautaDTO::new);
     }

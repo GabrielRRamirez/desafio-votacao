@@ -1,5 +1,7 @@
 package com.dbserver.desafiovotacao.modules.pauta.configuration;
 
+import com.dbserver.desafiovotacao.modules.pauta.application.PautaApplication;
+import com.dbserver.desafiovotacao.modules.pauta.application.impl.PautaApplicationImpl;
 import com.dbserver.desafiovotacao.modules.pauta.repository.impl.PautaRepositoryImpl;
 import com.dbserver.desafiovotacao.modules.pauta.usecase.CreatePautaUseCase;
 import com.dbserver.desafiovotacao.modules.pauta.usecase.FindPautaUseCase;
@@ -23,5 +25,10 @@ public class PautaConfiguration {
     @Bean
     public FindPautaUseCase beanFindPautaUseCase() {
         return new FindPautaUseCaseImpl(pautaRepository);
+    }
+
+    @Bean
+    public PautaApplication beanPautaApplication() {
+        return new PautaApplicationImpl();
     }
 }
