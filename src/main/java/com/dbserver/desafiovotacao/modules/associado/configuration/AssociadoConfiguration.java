@@ -1,5 +1,7 @@
 package com.dbserver.desafiovotacao.modules.associado.configuration;
 
+import com.dbserver.desafiovotacao.modules.associado.application.AssociadoApplication;
+import com.dbserver.desafiovotacao.modules.associado.application.impl.AssociadoApplicationImpl;
 import com.dbserver.desafiovotacao.modules.associado.repository.impl.AssociadoRepositoryImpl;
 import com.dbserver.desafiovotacao.modules.associado.usecase.CreateAssociadoUsecase;
 import com.dbserver.desafiovotacao.modules.associado.usecase.FindAssociadoUseCase;
@@ -23,5 +25,10 @@ public class AssociadoConfiguration {
     @Bean
     public FindAssociadoUseCase beanFindAssociadoUseCase() {
         return new FindAssociadoUseCaseImpl(associadoRepository);
+    }
+
+    @Bean
+    public AssociadoApplication beanAssociadoApplication() {
+        return new AssociadoApplicationImpl();
     }
 }

@@ -1,4 +1,5 @@
 CREATE TABLE IF NOT EXISTS associado (
     id SERIAL NOT NULL,
     nome VARCHAR(255) NOT NULL,
-    cpf VARCHAR(11) NOT NULL);
+    cpf VARCHAR(11) NOT NULL,
+    CONSTRAINT pk_associado PRIMARY KEY (id));

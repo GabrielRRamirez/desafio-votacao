@@ -22,7 +22,7 @@ public class Associado {
     private long id;
 
     @NotBlank(message = MSG_VALIDACAO_NOME)
-    @Pattern(regexp = "\\d{5,255}", message = MSG_VALIDACAO_NOME)
+    @Pattern(regexp = ".{5,255}", message = MSG_VALIDACAO_NOME)
     private String nome;
 
     @NotBlank(message = MSG_VALIDACAO_CPF)

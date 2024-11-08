@@ -18,11 +18,21 @@ public class FindAssociadoUseCaseImpl implements FindAssociadoUseCase {
     @Override
     public DetailAssociadoDTO findById(long id) {
         Associado associado = associadoRepository.findById(id);
-        if(Objects.isNull(associado)) {
+        if (Objects.isNull(associado)) {
             throw new EntityNotFoundException();
         }
 
         return new DetailAssociadoDTO(associado);
+    }
+
+    @Override
+    public Associado findEntityById(long id) {
+        Associado associado = associadoRepository.findById(id);
+        if (Objects.isNull(associado)) {
+            throw new EntityNotFoundException();
+        }
+
+        return associado;
     }
 
     @Override

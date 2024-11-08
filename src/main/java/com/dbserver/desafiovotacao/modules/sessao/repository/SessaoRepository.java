@@ -13,4 +13,6 @@ public interface SessaoRepository {
     Page<Sessao> findAll(Pageable pageable);
 
     boolean existsByPautaId(long idPauta);
+
+    Sessao findByPautaId(long idPauta);
 }

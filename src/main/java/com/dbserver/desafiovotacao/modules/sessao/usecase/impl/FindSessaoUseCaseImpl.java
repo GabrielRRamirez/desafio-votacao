@@ -27,6 +27,11 @@ public class FindSessaoUseCaseImpl implements FindSessaoUseCase {
     }
 
     @Override
+    public Sessao findByPautaId(long idPauta) {
+        return sessaoRepository.findByPautaId(idPauta);
+    }
+
+    @Override
     public Page<DetailSessaoDTO> findAll(Pageable pageable) {
         return sessaoRepository.findAll(pageable).map(DetailSessaoDTO::new);
     }

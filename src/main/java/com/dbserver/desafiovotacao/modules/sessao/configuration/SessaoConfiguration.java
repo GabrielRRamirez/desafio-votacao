@@ -1,6 +1,8 @@
 package com.dbserver.desafiovotacao.modules.sessao.configuration;
 
 import com.dbserver.desafiovotacao.modules.pauta.application.PautaApplication;
+import com.dbserver.desafiovotacao.modules.sessao.application.SessaoApplication;
+import com.dbserver.desafiovotacao.modules.sessao.application.impl.SessaoApplicationImpl;
 import com.dbserver.desafiovotacao.modules.sessao.repository.impl.SessaoRepositoryImpl;
 import com.dbserver.desafiovotacao.modules.sessao.usecase.CreateSessaoUseCase;
 import com.dbserver.desafiovotacao.modules.sessao.usecase.FindSessaoUseCase;
@@ -27,5 +29,10 @@ public class SessaoConfiguration {
     @Bean
     public FindSessaoUseCase beanFindSessaoUseCase() {
         return new FindSessaoUseCaseImpl(sessaoRepository);
+    }
+
+    @Bean
+    public SessaoApplication beanSessaoApplication() {
+        return new SessaoApplicationImpl();
     }
 }
