@@ -12,4 +12,4 @@ WORKDIR /app
 
 COPY --from=builder /app/build/libs/DesafioVotacao-0.0.1-SNAPSHOT.jar /app/DesafioVotacao-0.0.1-SNAPSHOT.jar
 
-CMD ["java", "-jar", "DesafioVotacao-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-Duser.timezone=America/Sao_Paulo", "-jar", "DesafioVotacao-0.0.1-SNAPSHOT.jar"]
