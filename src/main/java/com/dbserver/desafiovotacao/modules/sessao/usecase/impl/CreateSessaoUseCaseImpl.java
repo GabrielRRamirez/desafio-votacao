@@ -29,6 +29,10 @@ public class CreateSessaoUseCaseImpl implements CreateSessaoUseCase {
             sessao.setDataHoraTermino(sessao.getDataHoraInicio().plusMinutes(1L));
         }
 
+        if(sessao.getDataHoraTermino().isBefore(sessao.getDataHoraInicio())){
+            throw new ValidationException("A data término não pode ser inferior à data início!");
+        }
+
         Pauta pauta = pautaApplication.findById(createSessaoDTO.idPauta());
         sessao.setPauta(pauta);
 
