@@ -49,3 +49,11 @@ Para facilitar o teste das funcionalidades da API, você pode importar a collect
 Essa collection já contém as rotas e exemplos de requisições para facilitar os testes.
 
 ---
+### Documentação
+
+Para visualizar a documentação dos recursos disponibilizados para acesso na API, visite o endereço:
+```
+localhost:${APPLICATION_PORT}/swagger-ui/index.html#/ 
+```
+
+**Observação:** Substitua ``${APPLICATION_PORT}`` pela porta definida para a aplicação no arquivo ``.env``
